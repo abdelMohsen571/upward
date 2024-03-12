@@ -6,14 +6,14 @@ class ContractSupport(models.Model):
     _description = 'upward_contract_support'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string='Name', required=True)
+    name = fields.Char(string='Name', required=True, tracking=True)
     state = fields.Selection([('draft', 'Draft'),
                               ('progress', 'In Progress'),
-                              ('cancel', 'Canceled ')], default='draft')
-    date_to = fields.Date(string='Date To',default=date.today())
-    date_from = fields.Date(string='Date From')
-    partner_id = fields.Many2one('res.partner', string='Partner')
-    contract_id = fields.Many2one('hr.contract', string='Contract')
+                              ('cancel', 'Canceled ')], default='draft', tracking=True)
+    date_to = fields.Date(string='Date To',default=date.today(), tracking=True)
+    date_from = fields.Date(string='Date From', tracking=True)
+    partner_id = fields.Many2one('res.partner', string='Partner', tracking=True)
+    contract_id = fields.Many2one('hr.contract', string='Contract', tracking=True)
 
     def action_progress(self):
         for rec in self:
