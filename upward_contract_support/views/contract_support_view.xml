@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_contract_support_form" model="ir.ui.view">
+        <field name="name">contract.support.form</field>
+        <field name='model'>contract.support</field>
+        <field name='arch' type="xml">
+            <form delete="0">
+                <sheet>
+
+                    <header>
+                        <field name="state" widget="statusbar" nolabel="1"/>
+                        <button string="In Progress" name="action_progress" type="object"
+                                class="oe_highlight" data-hotkey="w"/>
+                        <button string="Cancel" name="action_cancel" type="object"
+                                class="oe_highlight" data-hotkey="w"/>
+
+                    </header>
+                    <div>
+                        <label for="name"/>
+                        <h1>
+
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="contract_id"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                        </group>
+                    </group>
+
+
+                </sheet>
+                <div class="oe_chatter">
+
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_contract_support_tree" model="ir.ui.view">
+        <field name="name">contract.support.tree</field>
+        <field name='model'>contract.support</field>
+        <field name='arch' type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="state"/>
+                <field name="partner_id"/>
+                <field name="contract_id"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_contract_support" model="ir.actions.act_window">
+        <field name="name">Appointments</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">contract.support</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Appintment!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="appointment_menu"
+              name="Appointments"
+              sequence="0"
+              parent="upward_contract_support"
+              action="action_contract_support"/>
+
+</odoo>

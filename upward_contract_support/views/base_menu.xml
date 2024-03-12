@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem id="upward_contract_support"
+              name="Contract Support"/>
+
+
+
+</odoo>
+        <!--        web_icon="om_hospital,static/description/icon.png"-->
