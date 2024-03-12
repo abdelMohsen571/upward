@@ -13,12 +13,10 @@
                                 class="oe_highlight" data-hotkey="w"/>
                         <button string="Cancel" name="action_cancel" type="object"
                                 class="oe_highlight" data-hotkey="w"/>
-
                     </header>
                     <div>
                         <label for="name"/>
                         <h1>
-
                             <field name="name"/>
                         </h1>
                     </div>
@@ -30,11 +28,11 @@
                             <field name="date_to"/>
                         </group>
                     </group>
-
-
                 </sheet>
                 <div class="oe_chatter">
-
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
                 </div>
             </form>
         </field>
@@ -57,7 +55,7 @@
 
 
     <record id="action_contract_support" model="ir.actions.act_window">
-        <field name="name">Appointments</field>
+        <field name="name">Contract Support</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">contract.support</field>
         <field name="view_mode">tree,form</field>
@@ -69,8 +67,8 @@
         </field>
     </record>
 
-    <menuitem id="appointment_menu"
-              name="Appointments"
+    <menuitem id="contract_support_menu"
+              name="Contract Support"
               sequence="0"
               parent="upward_contract_support"
               action="action_contract_support"/>
