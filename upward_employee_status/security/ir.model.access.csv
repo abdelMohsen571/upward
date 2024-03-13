@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.upward.employee.status,upward_employee_status,model_employee_status,base.group_user,1,1,1,1
+access.upward.hr.employee.status.type,upward_hr_employee_status_type,model_hr_employee_status_type,base.group_user,1,1,1,1

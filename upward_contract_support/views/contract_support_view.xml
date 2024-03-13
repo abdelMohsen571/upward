@@ -70,7 +70,7 @@
     <menuitem id="contract_support_menu"
               name="Contract Support"
               sequence="0"
-              parent="upward_contract_support"
+              parent="sale.sales_team_config"
               action="action_contract_support"/>
 
 </odoo>

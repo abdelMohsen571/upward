@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "upward_contract_support",
+    'name': "upward_employee_status",
 
     'summary': "Short (1 phrase/line) summary of the module's purpose",
 
@@ -18,16 +18,15 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'hr_contract','sale'],
+    'depends': ['base','hr','sale'],
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
-        'views/base_menu.xml',
-        'views/contract_support_view.xml',
-        'data/cron.xml',
-
+        # 'security/ir.model.access.csv',
+        'views/employee_status_view.xml',
+        'reports/employee_status_report.xml'
     ],
     # only loaded in demonstration mode
-
+    'demo': [],
 }
+
